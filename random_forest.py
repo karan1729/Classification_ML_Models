@@ -50,6 +50,15 @@ plt.ylabel('Estimated Salary')
 plt.legend()
 plt.show()
 
+# Fitting Random Forest Classification to the Training set
+from sklearn.ensemble import RandomForestClassifier
+classifier = RandomForestClassifier(n_estimators = 10, criterion = 'entropy', random_state = 0)
+classifier.fit(X_train, y_train)
+
+# Predicting the Test set results
+y_pred = classifier.predict(X_test)
+
+
 # Visualising the Test set results
 from matplotlib.colors import ListedColormap
 X_set, y_set = X_test, y_test
