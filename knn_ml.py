@@ -50,6 +50,13 @@ plt.ylabel('Estimated Salary')
 plt.legend()
 plt.show()
 
+
+
+# Testing K-NN to the Training set
+from sklearn.neighbors import KNeighborsClassifier
+classifier = KNeighborsClassifier(n_neighbors = 5, metric = 'minkowski', p = 2)
+classifier.fit(X_train, y_train)
+
 # Visualising the Test set results
 from matplotlib.colors import ListedColormap
 X_set, y_set = X_test, y_test
